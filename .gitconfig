@@ -1,0 +1,9 @@
+[user]
+	name = David Board
+	email = david.board@rte.ie
+[core]
+	editor = vim
+[color]
+	ui = auto
+[http]
+	postBuffer = 157286400
