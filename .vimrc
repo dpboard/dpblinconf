@@ -8,6 +8,9 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix |
     \ set colorcolumn=80
 
+autocmd BufWritePre *.py %s/\s\+$//e
+
 set nu
 set listchars=tab:▸\ ,trail:·
 set list
+
