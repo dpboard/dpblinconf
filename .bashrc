@@ -8,6 +8,7 @@ fi
 # User specific aliases and functions
 alias rdjd="source /usr/local/pyvirtualenvs/radiodj_dev/bin/activate"
 alias count="ls -1 | wc -l"
+alias ll="ls -lh"
 
 # get current branch in git repo
 function parse_git_branch() {
