@@ -10,13 +10,22 @@ alias rdjd="source /usr/local/pyvirtualenvs/radiodj_dev/bin/activate"
 alias count="ls -1 | wc -l"
 alias ll="ls -lh"
 
+function screen_window() {
+	if [ -n "${WINDOW}" ]; then
+		echo "{screen: ${WINDOW}} "
+	else
+		echo ""
+	fi
+}
+
+
 # get current branch in git repo
 function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
 	if [ ! "${BRANCH}" == "" ]
 	then
 		STAT=`parse_git_dirty`
-		echo "[${BRANCH}${STAT}]"
+		echo "[${BRANCH}${STAT}] "
 	else
 		echo ""
 	fi
@@ -57,4 +66,4 @@ function parse_git_dirty {
 	fi
 }
 
-export PS1="\[\e[31m\]\`parse_git_branch\`\[\e[m\] \[\e[36m\]\t\[\e[m\] \[\e[36m\]\u\[\e[m\]\[\e[36m\]@\[\e[m\]\[\e[36m\]\h\[\e[m\]\[\e[36m\] \[\e[m\]\[\e[95m\]\w\[\e[0m\] \n\e[36m\]>\[\e[m\] "
+export PS1="\[\e[92m\]\`screen_window\`\[\e[m\]\[\e[31m\]\`parse_git_branch\`\[\e[m\]\[\e[36m\]\t\[\e[m\] \[\e[36m\]\u\[\e[m\]\[\e[36m\]@\[\e[m\]\[\e[36m\]\h\[\e[m\]\[\e[36m\] \[\e[m\]\[\e[95m\]\w\[\e[0m\] \n\e[36m\]>\[\e[m\] "
