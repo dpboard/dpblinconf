@@ -66,4 +66,13 @@ function parse_git_dirty {
 	fi
 }
 
-export PS1="\[\e[92m\]\`screen_window\`\[\e[m\]\[\e[31m\]\`parse_git_branch\`\[\e[m\]\[\e[36m\]\t\[\e[m\] \[\e[36m\]\u\[\e[m\]\[\e[36m\]@\[\e[m\]\[\e[36m\]\h\[\e[m\]\[\e[36m\] \[\e[m\]\[\e[95m\]\w\[\e[m\]\n\[\e[36m\]>\[\e[m\] "
+function on_air_status() {
+	if [ -n "${ON_AIR_STATUS}" ]; then
+		echo "${ON_AIR_STATUS} "
+	else
+		echo ""
+	fi
+}
+
+export PS1="\`on_air_status\`\[\e[92m\]\`screen_window\`\[\e[m\]\[\e[31m\]\`parse_git_branch\`\[\e[m\]\[\e[36m\]\t\[\e[m\] \[\e[36m\]\u\[\e[m\]\[\e[36m\]@\[\e[m\]\[\e[36m\]\h\[\e[m\]\[\e[36m\] \[\e[m\]\[\e[95m\]\w\[\e[m\]\n\[\e[36m\]>\[\e[m\] "
+
