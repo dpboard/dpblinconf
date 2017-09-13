@@ -7,7 +7,7 @@ fi
 
 # User specific aliases and functions
 alias rdjd="source /usr/local/pyvirtualenvs/radiodj_dev/bin/activate"
-alias count="ls -1 | wc -l"
+alias count="ls -1a | wc -l"
 alias ll="ls -lh"
 
 function screen_window() {
