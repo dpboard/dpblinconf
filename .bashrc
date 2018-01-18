@@ -10,6 +10,7 @@ alias rdjd="source /usr/local/pyvirtualenvs/radiodj_dev/bin/activate"
 alias count="ls -1a | wc -l"
 alias ll="ls -lh"
 alias g="git"
+alias v="vim"
 
 function screen_window() {
 	if [ -n "${WINDOW}" ]; then
