@@ -5,7 +5,24 @@
 
 THIS_SCRIPT=$(readlink -f "$0")
 THIS_DIRECTORY=$(dirname "$THIS_SCRIPT")
+FILES=(
+	".bashrc"
+	".gitconifg"
+	".vimrc"
+)
 
-ln -fs "$THIS_DIRECTORY/.bashrc" ~/.bashrc
-ln -fs "$THIS_DIRECTORY/.gitconfig" ~/.gitconfig
-ln -fs "$THIS_DIRECTORY/.vimrc" ~/.vimrc
+
+echo "Symlinking David's funky env configs from $THIS_DIRECTORY"
+
+for file in ${FILES[@]}
+do	
+	ln -vfs "$THIS_DIRECTORY/$file" ~/$file
+	STATUS+=$?
+done
+
+if [ $STATUS -eq 0 ];then
+	echo "Done! :)"
+else
+	echo "Failed... :("
+fi
+
