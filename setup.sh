@@ -7,7 +7,7 @@ THIS_SCRIPT=$(readlink -f "$0")
 THIS_DIRECTORY=$(dirname "$THIS_SCRIPT")
 FILES=(
 	".bashrc"
-	".gitconifg"
+	".gitconfig"
 	".vimrc"
 )
 
