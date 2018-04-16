@@ -13,4 +13,4 @@ autocmd BufWritePre *.py %s/\s\+$//e
 set nu
 set listchars=tab:▸\ ,trail:·
 set list
-
+set mouse=a
