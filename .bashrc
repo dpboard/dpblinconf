@@ -11,6 +11,8 @@ alias count="ls -1a | wc -l"
 alias ll="ls -lh"
 alias g="git"
 alias v="vim"
+alias pe="pipenv"
+alias prp="pipenv run python"
 
 function screen_window() {
 	if [ -n "${WINDOW}" ]; then
