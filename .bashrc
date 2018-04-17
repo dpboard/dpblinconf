@@ -1,9 +1,13 @@
 # .bashrc
 
+
+
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
+
 
 # User specific aliases and functions
 alias rdjd="source /usr/local/pyvirtualenvs/radiodj_dev/bin/activate"
@@ -78,5 +82,6 @@ function on_air_status() {
 	fi
 }
 
-export PS1="\`on_air_status\`\[\e[92m\]\`screen_window\`\[\e[m\]\[\e[31m\]\`parse_git_branch\`\[\e[m\]\[\e[36m\]\t\[\e[m\] \[\e[36m\]\u\[\e[m\]\[\e[36m\]@\[\e[m\]\[\e[36m\]\h\[\e[m\]\[\e[36m\] \[\e[m\]\[\e[95m\]\w\[\e[m\]\n\[\e[36m\]>\[\e[m\] "
+export PS1="\`on_air_status\`\[\e[92m\]\`screen_window\`\[\e[31m\]\`parse_git_branch\`\[\e[95m\]\t \u@\h \[\e[93m\]\w\n\[\e[36m\]> "
+trap '[[ -t 1 ]] && tput sgr0' DEBUG
 
