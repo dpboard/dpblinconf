@@ -17,6 +17,7 @@ alias g="git"
 alias v="vim"
 alias pe="pipenv"
 alias prp="pipenv run python"
+alias sc="systemctl"
 
 function screen_window() {
 	if [ -n "${WINDOW}" ]; then
