@@ -1,0 +1,3 @@
+termcapinfo xterm*|rxvt*  te=\E[?1049l:ti=\E[?1049h:
+altscreen on
+hardstatus alwayslastline "%{+r}| SCREEN %S | %-w%{+u WK}%n-%t%{-}%+w %= |"

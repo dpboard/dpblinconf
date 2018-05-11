@@ -9,6 +9,7 @@ FILES=(
 	".bashrc"
 	".gitconfig"
 	".vimrc"
+	".screenrc"
 )
 
 
