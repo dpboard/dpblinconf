@@ -21,6 +21,10 @@ do
 	STATUS+=$?
 done
 
+echo "Setting up authorized_keys"
+
+ssh-copy-id -f -i "$THIS_DIRECTORY/.ssh/id_rsa.pub" boardd@localhost
+
 if [ $STATUS -eq 0 ];then
 	echo "Done! :)"
 else
