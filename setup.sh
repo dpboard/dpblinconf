@@ -10,6 +10,7 @@ FILES=(
 	".gitconfig"
 	".vimrc"
 	".screenrc"
+        ".config/fish"
 )
 
 
