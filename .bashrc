@@ -83,6 +83,14 @@ function on_air_status() {
 	fi
 }
 
-export PS1="\`on_air_status\`\[\e[92m\]\`screen_window\`\[\e[31m\]\`parse_git_branch\`\[\e[95m\]\t \u@\h \[\e[93m\]\w\n\[\e[36m\]> "
+function docker_machine_prompt() {
+	if [ -n "${__docker_machine_ps1}" ]; then
+		echo "${__docker_machine_ps1} "
+	else
+		echo ""
+	fi
+}
+
+export PS1="\`docker_machine_prompt\`\`on_air_status\`\[\e[92m\]\`screen_window\`\[\e[31m\]\`parse_git_branch\`\[\e[95m\]\t \u@\h \[\e[93m\]\w\n\[\e[36m\]> "
 trap '[[ -t 1 ]] && tput sgr0' DEBUG
 
