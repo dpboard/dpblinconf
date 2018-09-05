@@ -1,3 +1,8 @@
+execute pathogen#infect()
+
+filetype plugin indent on
+syntax on
+
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
