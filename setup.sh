@@ -11,6 +11,7 @@ FILES=(
 	".vimrc"
 	".screenrc"
         ".config/fish"
+	".tmux.conf"
 )
 
 
