@@ -1,4 +1,5 @@
 set -x VIRTUAL_ENV_DISABLE_PROMPT 1
+set -x TERM xterm-256color
 set -g __fish_git_prompt_color_bare normal
 set -g __fish_git_prompt_color_merging yellow
 set -g __fish_git_prompt_color_prefix normal
