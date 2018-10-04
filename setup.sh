@@ -25,6 +25,14 @@ do
 	STATUS+=$?
 done
 
+echo "Setting up authorized_keys"
+
+ssh-copy-id -i "$THIS_DIRECTORY/.ssh/id_rsa.pub" boardd@localhost
+
+STATUS+=$?
+
+echo "Changing shell to fish"
+
 if grep -q fish /etc/shells; then
   FISH=$(grep fish /etc/shells)
   echo "Found fish shell at $FISH"
@@ -33,10 +41,6 @@ if grep -q fish /etc/shells; then
 else
   echo "Could not find fish shell"
 fi
-
-echo "Setting up authorized_keys"
-
-ssh-copy-id -f -i "$THIS_DIRECTORY/.ssh/id_rsa.pub" boardd@localhost
 
 if [ $STATUS -eq 0 ];then
 	echo "Done! :)"
