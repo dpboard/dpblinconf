@@ -19,10 +19,20 @@ FILES=(
 echo "Symlinking David's funky env configs from $THIS_DIRECTORY"
 
 for file in ${FILES[@]}
-do	
+do
+	rm -rf ~/$file	
 	ln -vfs "$THIS_DIRECTORY/$file" ~/$file
 	STATUS+=$?
 done
+
+if grep -q fish /etc/shells; then
+  FISH=$(grep fish /etc/shells)
+  echo "Found fish shell at $FISH"
+  chsh --shell $FISH boardd
+  STATUS+=$?
+else
+  echo "Could not find fish shell"
+fi
 
 echo "Setting up authorized_keys"
 
